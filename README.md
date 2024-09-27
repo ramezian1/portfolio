@@ -29,4 +29,4 @@ This portfolio was built using:
 - **JavaScript**
 
 ## 📂 Repository Structure
-
+/personal-portfolio ├── index.html # Home page ├── about.html # About page ├── contact.html # Contact page ├── projects.html # Projects page ├── styles.css # Global styles
