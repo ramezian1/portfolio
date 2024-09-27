@@ -6,34 +6,43 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Using Roboto font */
+  font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
+  padding-top: 80px; /* Add space for the fixed navbar */
 }
 
-/* Header Styles */
+/* Navigation Bar */
 header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul {
   list-style: none;
+  display: flex;
   padding: 0;
 }
 
 header nav ul li {
-  display: inline-block;
-  margin-right: 15px;
+  margin: 0 15px;
 }
 
 header nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+  color: #f4f4f4;
 }
 
 /* Main Heading */
@@ -55,14 +64,16 @@ h1 {
 }
 
 .projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
+/* Project Cards with Background Image */
 .project-card {
-  background-color: #fff;
+  background-image: url('your-project-box-background.jpg');
+  background-size: cover;
+  background-position: center;
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 300px;
@@ -104,15 +115,14 @@ h1 {
 /* Media Query for Responsiveness */
 @media (max-width: 768px) {
   .projects-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   header nav ul {
-    text-align: center;
+    flex-direction: column;
   }
 
   header nav ul li {
-    display: block;
     margin: 10px 0;
   }
 }
@@ -203,4 +213,7 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }
